@@ -11,8 +11,8 @@
     }
     body {
       font-family: 'Cairo', sans-serif;
-      background: #002200; /* أخضر داكن جدًا */
-      color: #bfa65a; /* ذهبي هادي */
+      background: #002200;
+      color: #bfa65a;
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -266,6 +266,69 @@
         filename: 'Practical Malware Analysis.pdf',
         tags: ['تحليل', 'متوسط'],
         cover: ''
+      },
+      {
+        title: 'Black Hat Python, 2nd Edition',
+        author: 'Mohammad Almahamid',
+        filename: 'Black Hat Python, 2nd Edition.pdf',
+        tags: ['Python', 'اختبار اختراق'],
+        cover: ''
+      },
+      {
+        title: 'Bug Bounty Hunting Essentials',
+        author: 'Mohammad Almahamid',
+        filename: 'Bug Bounty Hunting Essentials.pdf',
+        tags: ['Bug Bounty', 'اختبار اختراق'],
+        cover: ''
+      },
+      {
+        title: 'From Day Zero to Zero Day',
+        author: 'Eugene Lim',
+        filename: 'From_Day_Zero_to_Zero_Day_Eugene_Lim_I,_I,_2025_No_Starch_Press.pdf',
+        tags: ['أمن سيبراني', 'اختراق', 'متقدم'],
+        cover: ''
+      },
+      {
+        title: 'GMAIL HACKING kwulu',
+        author: 'Mohammad Almahamid',
+        filename: 'GMAIL_HACKING_kwulu.pdf',
+        tags: ['اختراق', 'أمن سيبراني'],
+        cover: ''
+      },
+      {
+        title: 'Hacking with Python',
+        author: '@cyber_security_club_hk',
+        filename: 'hacking_with_python_by_cyber_security_club_hk.pdf',
+        tags: ['Python', 'اختراق'],
+        cover: ''
+      },
+      {
+        title: 'OSCP LABS TO PRACTICE 2023',
+        author: 'Mohammad Almahamid',
+        filename: 'OSCP LABS TO PRACTICE 2023.pdf',
+        tags: ['OSCP', 'اختبار اختراق', 'ممارسة'],
+        cover: ''
+      },
+      {
+        title: 'Red Team Analyst Course Materials',
+        author: 'Mohammad Almahamid',
+        filename: 'Red-Team-Analyst-Course-Materials.pdf',
+        tags: ['Red Team', 'تحليل', 'اختبار اختراق'],
+        cover: ''
+      },
+      {
+        title: 'RedTeam Tools',
+        author: 'Mohammad Almahamid',
+        filename: 'RedTeam-Tools.pdf',
+        tags: ['Red Team', 'أدوات', 'اختبار اختراق'],
+        cover: ''
+      },
+      {
+        title: 'Windows Privilege Escalation Techniques',
+        author: 'Mohammad Almahamid',
+        filename: 'Windows Privilege Escalation Techniques.pdf',
+        tags: ['Windows', 'تصعيد صلاحيات', 'اختبار اختراق'],
+        cover: ''
       }
     ];
 
@@ -318,56 +381,4 @@
         } else {
           cover.textContent = book.title
             .split(' ')
-            .slice(0, 3)
-            .map(w => w[0] || '')
-            .join('')
-            .toUpperCase();
-        }
-
-        const title = document.createElement('h2');
-        title.className = 'title';
-        title.textContent = book.title;
-
-        const meta = document.createElement('p');
-        meta.className = 'meta';
-        meta.textContent = `المؤلف: ${book.author}`;
-
-        const tagsWrap = document.createElement('div');
-        tagsWrap.className = 'tags';
-        (book.tags || []).slice(0, 6).forEach(tag => {
-          const sp = document.createElement('span');
-          sp.className = 'tag';
-          sp.textContent = tag;
-          tagsWrap.appendChild(sp);
-        });
-
-        const actions = document.createElement('div');
-        actions.className = 'actions';
-
-        const dl = document.createElement('a');
-        dl.className = 'btn';
-        dl.textContent = 'تحميل';
-        dl.href = './books/' + encodeURIComponent(book.filename || '');
-        dl.target = '_blank';
-        dl.rel = 'noopener noreferrer';
-
-        actions.appendChild(dl);
-
-        card.appendChild(cover);
-        card.appendChild(title);
-        card.appendChild(meta);
-        card.appendChild(tagsWrap);
-        card.appendChild(actions);
-
-        grid.appendChild(card);
-      });
-    }
-
-    search.addEventListener('input', render);
-    filter.addEventListener('change', render);
-
-    populateFilter();
-    render();
-  </script>
-</body>
-</html>
+           
